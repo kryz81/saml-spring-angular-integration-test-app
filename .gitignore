@@ -37,3 +37,6 @@ out/
 .vscode/
 /src/main/resources/local.crt
 /src/main/resources/local.key
+
+node_modules
+.vscode
