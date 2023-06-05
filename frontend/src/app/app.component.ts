@@ -15,7 +15,7 @@ export class AppComponent {
       .get('http://localhost:8080/authenticated', { withCredentials: true })
       .subscribe((data) => {
         if (data === false) {
-          window.location.href = 'http://localhost:8080/login/okta';
+          window.location.href = 'http://localhost:8080/saml2/authenticate';
         } else {
           this.http
             .get('http://localhost:8080', { withCredentials: true })

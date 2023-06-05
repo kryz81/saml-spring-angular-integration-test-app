@@ -13,7 +13,6 @@ public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,
                                 Authentication authentication) throws IOException, ServletException {
-        // Perform any additional logic or redirection here
         response.sendRedirect("http://localhost:4200/logout");
     }
 }

@@ -4,5 +4,10 @@
 <div *ngIf="authUser">
   <button (click)="logout()">logout</button>
 </div>
+<div *ngIf="authUser">
+  <form action="http://localhost:8080/logout" method="post">
+    <button type="submit">logout post</button>
+  </form>
+</div>
 <br /><br />
 <router-outlet></router-outlet>

@@ -38,9 +38,14 @@ public class SecurityConfig {
         http.cors().and().authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/authenticated").permitAll()
                         .anyRequest().authenticated())
-                .logout().logoutSuccessHandler(logoutSuccessHandler())
-                .permitAll()
-                .and().csrf().disable()
+                .logout()
+                //.clearAuthentication(true)
+                .logoutSuccessHandler(logoutSuccessHandler())
+                //.deleteCookies("JSESSIONID")
+                //.invalidateHttpSession(true)
+                //.permitAll()
+                .and()
+                .csrf().disable()
                 .saml2Login(saml2 -> saml2
                         .authenticationManager(
                                 new ProviderManager(authenticationProvider)

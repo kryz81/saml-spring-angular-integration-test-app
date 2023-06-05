@@ -3,6 +3,18 @@ spring:
     saml2:
       relyingparty:
         registration:
+          mocksaml:
+            assertingparty:
+              metadata-uri: http://localhost:9090/api/saml/metadata
+            #metadata-uri: https://mocksaml.com/api/saml/metadata
+            signing:
+              credentials:
+                - private-key-location: classpath:local.key
+                  certificate-location: classpath:local.crt
+            singlelogout:
+              binding: POST
+              response-url: "{baseUrl}/logout/saml2/slo"
+
           okta:
             assertingparty:
               metadata-uri: https://dev-65085013.okta.com/app/exk9qzqlkyxtZokro5d7/sso/saml/metadata
@@ -13,8 +25,6 @@ spring:
             singlelogout:
               binding: POST
               response-url: "{baseUrl}/logout/saml2/slo"
-
-          
 
 server:
   servlet:
