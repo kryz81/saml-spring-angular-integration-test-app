@@ -27,4 +27,5 @@ public class HomeController {
     public Boolean authenticated(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal) {
         return principal != null;
     }
+
 }
